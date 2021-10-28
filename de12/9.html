@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <!-- ⑥↓タイトルを変えてみよう -->
+    <title>kosugi12第5回のページ</title>
+    <!-- ⑤スタイルシートの設定をしよう -->
+    <!-- h1.htmlからある行をコピペしてくればOK -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h1>数当てゲーム</h1><br>
+  <h2>ゲームの説明</h2><br>
+  1～100の中から1つ数字を選んだ状態からスタートします。<br>
+  このゲームを利用している人に選ばれている数字を当ててもらう。<br>
+　回答のチャンスは5回まで。<br>
+  1～100と幅がものすごく広いので難易度はかなり高い。<br>
+
+  
+  <br>
+
+  <h3>実際に作ったソースコード</h3>
+  
+  <code>
+    <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+    <li style="background-color:#EFF;">import random</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;">ans = random.randint(1,100)</li>
+    <li style="background-color:#EEF;">max_count=5</li>
+    <li style="background-color:#EFF;">print(<font style="color:brown;">'1~100の数字の中から一つ選んだ。'</font>)</li>
+    <li style="background-color:#EEF;">print(<font style="color:brown;">'その数字を'</font>,max_count,<font style="color:brown;">'回以内に当てなさい。'</font>)</li>
+    <li style="background-color:#EFF;"></li>
+    <li style="background-color:#EEF;">for i in range(1,max_count+1):</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;print(i,<font style="color:brown;">'回目の数字は？'</font>)</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;num=int(input())</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;if num==ans:</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(<font style="color:brown;">'当たり！！'</font>)</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;elif num &gt; ans:</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(<font style="color:brown;">'もっと下の数字だよ'</font>)</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;else:</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(<font style="color:brown;">'もっと上の数字だよ'</font>)</li>
+    <li style="background-color:#EEF;">else:</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;print(<font style="color:brown;">'残念〜正解は'</font>,ans,<font style="color:brown;">'です。'</font>)</li>
+    </ol></code><br>
+
+    今回は、random形式でゲームを作りました。<br>
+    randoma.randint(1.100)で1～100まで数字の選ぶ幅を決めることができます。<br>
+    そして、max_count=5で何回目まで回答することができるのかを決め、print(' ')で伝えたい文章を表示させる。<br>
+    if文は、条件分岐を行うための方法。（プログラム中である条件が満たされているかによって、次に実行するプログラミング上の位置を変化させること）<br>
+    回答が当たりだった場合と違う場合のどちらとも書いておかなければならない。<br>
+    <br>
+    <h3>＜当たりだった場合＞</h3>
+    if num==ans:<br>
+    print('当たり！')
+    break<br>
+    ---------------------------------------------------------<br>
+    <br>
+     <h3>＜違う場合（ヒント）＞</h3><br>
+  　数字が大きかった時は…<br>　　　　　　　　　　
+    elif num > ans:<br> 　　　　　　　　　　　　　
+    print('もっと下の数字だよ ')<br>
+
+    数字が小さかった時は…<br>
+    else: <br>   　            
+    print('もっと上の数字だよ')<br>
+　　<br>
+    解答を表示するときは…<br>
+    else:<br>
+         print('残念～正解は',ans'です。)<br>
+    ---------------------------------------------------------<br>
+    <h3>*覚えておくこと*</h3>
+    違う場合はelse:<br>
+    合っている場合は==   :<br>
+
+    <h3>遊んでる動画</h3>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/LGnuoHNtgwo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+    <br>
+    <h3>当たりの時の画像</h3><br>
+    <img src="mame1.jpg" width="40%"><br>
+    <img src="mame2.jpg" width="40%"><br>
+    4回目ぐらいでやっと当たりが出ました！！<br>
+    かなり、難しかったです。<br>
+    反省としては、もう少し選ぶ数字の幅を小さくして難易度を下げれば良かったと思いました。
+    
+
+    
+
+
+</body>
+</html>
