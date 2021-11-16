@@ -30,16 +30,44 @@
 ここから、乗車時間、バス、敷金、礼金、面積を比べて見ることができます。
 
 <h3>ソースコード</h3>
-<li style="background-color:#EEF;">df_mean.plot.bar()</li>
-<li style="background-color:#EFF;">plt.subplots_adjust(bottom=0.3)</li>
-<li style="background-color:#EEF;">plt.show()</li>
-<li style="background-color:#EFF;"></li>
-<li style="background-color:#EEF;"></li>
-</ol></code>
-
-</body>
-
-    </div><br>
-</ul>
+<code>
+    <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+    <li style="background-color:#EFF;"></li>
+    <li style="background-color:#EEF;">df_mean = df_data.groupby("路線").mean()</li>
+    <li style="background-color:#EFF;">x = df_mean.index</li>
+    <li style="background-color:#EEF;">y = df_mean.loc[:, "家賃"]</li>
+    <li style="background-color:#EFF;">plt.bar(x, y)</li>
+    <li style="background-color:#EEF;">plt.xlabel("路線")</li>
+    <li style="background-color:#EFF;">plt.ylabel("家賃")</li>
+    <li style="background-color:#EEF;">plt.xticks(rotation=90)</li>
+    <li style="background-color:#EFF;">plt.show()</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;">print(df_data.columns)</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;">mask = df_data.loc[:, "路線"] == "東急東横線"</li>
+    <li style="background-color:#EEF;">print(df_data[mask].groupby("駅").mean())</li>
+    <li style="background-color:#EFF;"></li>
+    <li style="background-color:#EEF;">df_mean = df_data[mask].groupby("駅").mean().loc[:, "家賃"].sort_values()</li>
+    <li style="background-color:#EFF;">df_mean.plot.bar()</li>
+    <li style="background-color:#EEF;">plt.subplots_adjust(bottom=0.3)</li>
+    <li style="background-color:#EFF;">plt.show()</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;">mask = df_data.loc[:, "路線"] == "東急東横線"</li>
+    <li style="background-color:#EEF;">print(df_data[mask].groupby("駅").mean())</li>
+    <li style="background-color:#EFF;"></li>
+    <li style="background-color:#EEF;">df_mean = df_data[mask].groupby("駅").mean().loc[:, "築年数"].sort_values()</li>
+    <li style="background-color:#EFF;">df_mean.plot.bar()</li>
+    <li style="background-color:#EEF;">plt.subplots_adjust(bottom=0.3)</li>
+    <li style="background-color:#EFF;">plt.show()</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;">df_mean = df_data.groupby("路線").mean()</li>
+    <li style="background-color:#EEF;">x = df_mean.index</li>
+    <li style="background-color:#EFF;">y = df_mean.loc[:, "家賃"]</li>
+    <li style="background-color:#EEF;">plt.bar(x, y)</li>
+    <li style="background-color:#EFF;">plt.xlabel("路線")</li>
+    <li style="background-color:#EEF;">plt.ylabel("家賃")</li>
+    <li style="background-color:#EFF;">plt.xticks(rotation=90)</li>
+    <li style="background-color:#EEF;">plt.show()</li>
+    </ol></code>
 </body>
 </html>
