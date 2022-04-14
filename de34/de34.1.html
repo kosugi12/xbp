@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <title>XBP_HP kosugi12.1</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/xbp.ico">
+</head>
+
+<body>
+    <logotohome>
+    <a href="../index.html"><img src="./images/0_XBlogo.png" alt=""></a>
+    </logotohome>
+    <h1>第1回｜マイコンボードの基礎</h1>
+    <br>
+    <h2>Assignment1<br>
+   ＊ドキュメンテーション＊</h2><br>
+    マイコンボードは…<br>
+　　　LEDを光らせたり、抵抗を使ったりして光を弱めたりすることもできる。<br>
+　　　<img src="maikon1.jpg" width="40%">  <img src="maikon2.jpg" width="40%"><br>
+     
+
+
+
+
+<code>
+    <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+    <li style="background-color:#EFF;"></li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;void setup() {</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;// put your setup code here, to run once:</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;Serial.begin(9600);</li>
+    <li style="background-color:#EFF;">}</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;">void loop() {</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;// put your main code here, to run repeatedly:</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;int val=0;</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;val=analogRead(1);</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;Serial.println(val);</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;">&nbsp;if (val&lt;150)</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;digitalWrite(13,LOW);  </li>
+    <li style="background-color:#EFF;">&nbsp;else   </li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;digitalWrite(13,HIGH);</li>
+    <li style="background-color:#EFF;">&nbsp;</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;">}</li>
+    </ol></code>
+
+
+    <h2>Assignment2<br>
+        ＊正と負の感情のリスト化＊</h2>
+   
+    
+              </div>
+
+
+    
+<br>
+<br>
+
+
+</body>
+
+</html>
