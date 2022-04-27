@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <title>XBP_de34HP kosugi12.第3回</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/xbp.ico">
+</head>
+
+<body>
+   
+    <h1>第3回｜商品・サービス企画設計(プロトタイピング）</h1>
+    <br>
+    <h2>-今回のテーマー動きを操るー</h2><br>
+    <h3>Assignment1</h3>
+    <h3>ステッピングモーターの原理</h3>
+　　<img src="h2.jpg" width="50%">
+   <h3>ステッピングモーターをArduinoで動かす</h3>
+  
+   <h3>配線</h3>
+   <img src="h1.png" width="30%">
+   <h3>モーターを動かすためのソースコード</h3>
+   <code>
+    <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+    <li style="background-color:#EFF;">const int DIR  = 8;</li>
+    <li style="background-color:#EEF;">const int STEP = 9;</li>
+    <li style="background-color:#EFF;"></li>
+    <li style="background-color:#EEF;">void setup() {</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;pinMode(DIR, OUTPUT);</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;pinMode(STEP, OUTPUT);</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;digitalWrite(DIR, LOW);</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;digitalWrite(STEP, LOW);</li>
+    <li style="background-color:#EFF;">}</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;">void loop() {</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;for (int i=0; i &lt;= 50; i++){</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;clockwise(5000);</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;}</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;for (int i=0; i &lt;= 50; i++){</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;counter_clockwise(5000);</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;}</li>
+    <li style="background-color:#EFF;">}</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;">void clockwise(int delaytime){</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;digitalWrite(DIR, HIGH);//HIGHは時計回り</li>
+    <li style="background-color:#EFF;"></li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;digitalWrite(STEP, HIGH);</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;delayMicroseconds(delaytime);</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;digitalWrite(STEP, LOW);</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;delayMicroseconds(delaytime);</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;">}</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;">void counter_clockwise(int delaytime){</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;digitalWrite(DIR, LOW);//はLOWは反時計回り</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;digitalWrite(STEP, HIGH);</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;delayMicroseconds(delaytime);</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;digitalWrite(STEP, LOW);</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;delayMicroseconds(delaytime);</li>
+    <li style="background-color:#EEF;">}</li>
+    <li style="background-color:#EFF;"></li>
+    </ol></code>
+   ※ <a href="https://kosugi12.github.io/xbp/de34/index.html" >ソースコードをhtmlに変更する変換アプリのサイト</a><br>
+
+ <h3>実際の画像と動画</h3>
+ 　<img src="h3.jpg" width="35%"><iframe width="560" height="315" src="https://www.youtube.com/embed/iLazdgNo3i8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+ <h3>Assignment2</h3>
+ <img src="h4.jpg" width="40%"><br>
+  6班グループまとめ<br>
+  ・HMWとは…<a href="https://kuxbp.github.io/xbp/data_fab/images/hmw.jpeg">HMW</a><br>
+   How might we…？どうすれば私たちは～できそう？<br>
+   サウナで整うという表現をしている人に出会った。<br>
+   →私たちは一定の動きをしていても飽きないこと＝「整うという表現」に繋がるのではないかと考えた。<br>
+   ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー<br>
+  ・Yes.andとは…<a href="https://kuxbp.github.io/xbp/data_fab/images/hmw2.jpeg">Yes.and</a><br>
+　　こうすれば…Yes.and…<br>
+　整うという表現を使ってもらうには…<br>
+→そうそう、整うといえば、サウナだよね<br>
+→そうそう、サウナといえば、ぼーっとできるよね<br>
+→そうそう、ぼーっとするといえば、何も考えないでいられるよね<br>
+→そうそう、何も考えないでいられるといえば、ブランコとかシーソーだよね<br>
+→そうそう、ブランコとかシーソーといえば、一定の動きをしているよね<br>
+→そうそう、一定の動きをしているといえば、ずっと見ていられるよね　　　　　　　など…<br>
+<br>
+疑問点、自分の気づき!!<br>
+何も考えないとは、力を抜くこと、呼吸にも関係しているのではないか…<br>
+何も考えない＝無の状態<br>
+</body>
+
+</html>
