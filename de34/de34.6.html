@@ -2,70 +2,83 @@
 <html lang="jp">
 <head>
     <meta charset="UTF-8">
-    <title>XBP_de34HP kosugi12.第1回</title>
+    <title>XBP_de34HP kosugi12.第6回｜IOT製品製作</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="images/xbp.ico">
 </head>
 
 <body>
    
-    <h1>第1回｜マイコンボードの基礎</h1>
+    <h1>第8回｜IOT製品製作</h1>
     <br>
-    <h2>Assignment1<br>
-   ＊ドキュメンテーション＊</h2><br>
-    マイコンボードは…<br>
-　　　LEDを光らせたり、抵抗を使ったりして光を弱めたりすることもできる。<br>
-　　　<img src="maikon1.jpg" width="40%">  <img src="maikon2.jpg" width="40%"><br>
-      
-      <br>
-      
-    <h1>Arduino</h1>
-    <a href="https://qiita.com/doyodoyo/items/0f3f6c3a5e09b30062a3">設定</a><br>
-    <a href="https://qiita.com/doyodoyo/items/29598bc44cf54b3b174b">Lチカ</a><br>
-    <a href="https://qiita.com/doyodoyo/items/6f860e3cad6b60aff509">明るさの測定</a><br>
-
-
-        <h1> 今回自分たちで行った作業</h1>
-        条件：抵抗を使って何もしなければLEDが光り、手をかざすとLEDが消える。<br>
-        ※if文は使わない<br>
-
-    <img src="konb1.jpg" width="40%"><br>
-    <h2>実際のプログラム</h2>
-<code>
-    <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
-    <li style="background-color:#EFF;"></li>
-    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;void setup() {</li>
-    <li style="background-color:#EFF;">&nbsp;&nbsp;// put your setup code here, to run once:</li>
-    <li style="background-color:#EEF;">&nbsp;&nbsp;Serial.begin(9600);</li>
-    <li style="background-color:#EFF;">}</li>
-    <li style="background-color:#EEF;"></li>
-    <li style="background-color:#EFF;">void loop() {</li>
-    <li style="background-color:#EEF;">&nbsp;&nbsp;// put your main code here, to run repeatedly:</li>
-    <li style="background-color:#EFF;">&nbsp;&nbsp;int val=0;</li>
-    <li style="background-color:#EEF;">&nbsp;&nbsp;val=analogRead(1);</li>
-    <li style="background-color:#EFF;">&nbsp;&nbsp;Serial.println(val);</li>
-    <li style="background-color:#EEF;"></li>
-    <li style="background-color:#EFF;">&nbsp;if (val&lt;150)</li>
-    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;digitalWrite(13,LOW);  </li>
-    <li style="background-color:#EFF;">&nbsp;else   </li>
-    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;digitalWrite(13,HIGH);</li>
-    <li style="background-color:#EFF;">&nbsp;</li>
-    <li style="background-color:#EEF;"></li>
-    <li style="background-color:#EFF;">}</li>
-    </ol></code><br>
-    
-    <h2>Assignment2<br>
-        ＊正と負の感情のリスト化＊</h2>
-        &#128530;負の感情<br>
-            ・分からないことがある<br>
-            ・テスト<br>
-            ・何か問題が起こった時<br>
-            ・朝起きること<br>
+    <h2>Assignment1</h2>
+    ＊スケジュール<br>
+    6／6　　IOT製品を使って作るものを決める<br>
+    6／13　 今後のスケジュール確認　必要な材料集め<br>
+    6／20　　製作期間　（3Dプリンター使用　活動場所：FabLab）<br>
+    6／27　　製作期間　（前回の改善や方針に向けての検討）<br>
+    7／4　　プログラミング　　新たに必要な材料の買い出し<br>
+    7／11　　プログラミング　配線や接続確認<br>
+    7／16　　プログラミング　エラーなどの改善やプレゼンに向けて<br>
+    7／18　　最終発表<br>
     <br>
-    	&#x1F929;正の感情<br>
-            ・思い通りにいった時<br>
-            ・問題を解決した時<br>
-            ・友達と会った時<br>
+    ＊役割分担<br>
+    ものづくり：<a href="https://kosugi12.github.io/xbp/">小杉</a>、<a href="https://threejeong.github.io/xbp/de34/">チェセジョン</a>、<a href="https://takanasho.github.io/xbp/de34/">高梨</a><br>
+    プログラミング：<a href="https://matsumoyo.github.io/xbp/de34/">松本</a>、<a href="https://y-k-student.github.io/XBP/de34/">栗田</a><br>
+    ※ものづくりが終わってもプログラミングへ手伝い
+
+＊活動内容
+6／6　IOT製品を使って作るものを決める<br>
+
+　　どんなIOT機能が良いか…<br>
+　　・センサー？<br>
+　　・ライト？　　　　　→　生活に役立つモノで面白さを加える！<br>
+　　・動きのあるもの？<br>
+<br>
+6／13　 今後のスケジュール確認　必要な材料集め<br>
+　　　　
+　　実際に何を作るのか…<br>
+　<img src="s1.jpg.png" width="40%"><img src="s2.jpg.png" width="40%"><img src="s3 (2).jpg.png" width="40%"><img src="b1.png" width="40%"><br>
+  リレー回路を使ったIOT製品の方向で考えていく。<br>
+　　　
+
+<br>
+6／20　　製作期間　（3Dプリンター使用　活動場所：FabLab）<br>
+　<img src="p1.png" width="40%"><br>
+センサー通らず、ペットボトルを入れられることはできる・・課題が発生
+どうしたら、製品に繋げられるかを話し合う。<br>
+<br>
+6／27　　製作期間　（前回の改善や方針に向けての検討）<br>
+<img src="p2.png" width="40%">　<img src="p3.png" width="40%">
+
+<br>
+7／4　　プログラミング　　新たに必要な材料の買い出し<br>
+　<img src="a1.png" width="40%"><br>
+参考にするサイトで値の修正などを行う。電流や電圧、抵抗などの値の確認とArduinoの編集<br>
+
+
+<br>
+7／11　　プログラミング　配線や接続確認<br>
+　<img src="i1.jpg" width="20%">　<img src="i2.jpg" width="20%"><br>
+  <img src="i3.jpg" width="20%">　<img src="i4.jpg" width="20%"><br>
+赤→電流　黄色→信号　黒→PNG<br>
+7／16　　プログラミング　エラーなどの改善やプレゼンに向けて<br>
+  <img src="e1.png" width="40%"><br>
+  一度起きたエラーを直すと、再びセンサーが反応しない原因は？<br>
+  確認しては実行の繰り返し<br>
+
+
+<br>
+7／18　　最終発表<br>
+
+
+
+
+
+
+
+
+   
    
 
 
