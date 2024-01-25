@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <!-- ⑥↓タイトルを変えてみよう -->
+    <title>第7回｜データーサイエンスの基礎</title>
+    <!-- ⑤スタイルシートの設定をしよう -->
+    <!-- h1.htmlからある行をコピペしてくればOK -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+ <h1>データーサイエンスの基礎</h1>
+ 私がおすすめするエリアを紹介していきたいと思います。<br>
+<h2>私がおすすめしたいエリアは、東急東横線の白楽です。</h2><br>
+   なぜ東急東横線がいいのかを詳しく見ていきたいと思います。<br>
+このグラフは、合計時間、面積、家賃、築年数、について他の路線と比較したものです。<br>
+ <img src="Figure_1横浜周辺のグラフ.png" width="80%"><br>
+ この４つの分類からバランスがとれているものは東急東横線です。<br>
+ 特に、合計時間が周りと比べてみると少ない。さらにそれだけでなく、家賃も10万円以下となっていて安いです。<br>
+ また、20年ぐらいとあまり年数が経っていないことや、面積も丁度いいと思いました。<br>
+<br>
+ 東急東横線をもう少し詳しく見てみました。<br>   
+＊家賃<br>
+<img src="Figure_1.png 東急東横線家賃.png" width="40%"><br>
+*築年数<br>
+<img src="Figure_1.png東急東横線築年数.png" width="40%"><br>
+このグラフから、白楽は家賃が6万円なので、凄く安い。また、築年数もそんなに古すぎないのでおすすめできると考えました。<br>
+<br>
+<h3>そのほかのデータ</h3>
+<img src="hp1.jpg" width="40%"><br>
+ここから、乗車時間、バス、敷金、礼金、面積を比べて見ることができます。<br>
+この表から、敷金、礼金の欄を見ると3万円ぐらいなので、周りと比べたところかなり安いです。<br>
+その他にも、面積は、23㎡なので狭くも広くもなくちょうど良い場所です。<br>
+
+<h3>ソースコード</h3>
+<code>
+    <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+    <li style="background-color:#EFF;"></li>
+    <li style="background-color:#EEF;">df_mean = df_data.groupby("路線").mean()</li>
+    <li style="background-color:#EFF;">x = df_mean.index</li>
+    <li style="background-color:#EEF;">y = df_mean.loc[:, "家賃"]</li>
+    <li style="background-color:#EFF;">plt.bar(x, y)</li>
+    <li style="background-color:#EEF;">plt.xlabel("路線")</li>
+    <li style="background-color:#EFF;">plt.ylabel("家賃")</li>
+    <li style="background-color:#EEF;">plt.xticks(rotation=90)</li>
+    <li style="background-color:#EFF;">plt.show()</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;">print(df_data.columns)</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;">mask = df_data.loc[:, "路線"] == "東急東横線"</li>
+    <li style="background-color:#EEF;">print(df_data[mask].groupby("駅").mean())</li>
+    <li style="background-color:#EFF;"></li>
+    <li style="background-color:#EEF;">df_mean = df_data[mask].groupby("駅").mean().loc[:, "家賃"].sort_values()</li>
+    <li style="background-color:#EFF;">df_mean.plot.bar()</li>
+    <li style="background-color:#EEF;">plt.subplots_adjust(bottom=0.3)</li>
+    <li style="background-color:#EFF;">plt.show()</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;">mask = df_data.loc[:, "路線"] == "東急東横線"</li>
+    <li style="background-color:#EEF;">print(df_data[mask].groupby("駅").mean())</li>
+    <li style="background-color:#EFF;"></li>
+    <li style="background-color:#EEF;">df_mean = df_data[mask].groupby("駅").mean().loc[:, "築年数"].sort_values()</li>
+    <li style="background-color:#EFF;">df_mean.plot.bar()</li>
+    <li style="background-color:#EEF;">plt.subplots_adjust(bottom=0.3)</li>
+    <li style="background-color:#EFF;">plt.show()</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;">df_mean = df_data.groupby("路線").mean()</li>
+    <li style="background-color:#EEF;">x = df_mean.index</li>
+    <li style="background-color:#EFF;">y = df_mean.loc[:, "家賃"]</li>
+    <li style="background-color:#EEF;">plt.bar(x, y)</li>
+    <li style="background-color:#EFF;">plt.xlabel("路線")</li>
+    <li style="background-color:#EEF;">plt.ylabel("家賃")</li>
+    <li style="background-color:#EFF;">plt.xticks(rotation=90)</li>
+    <li style="background-color:#EEF;">plt.show()</li>
+    </ol></code>
+　　<br>
+
+    <a href="files/プレゼンテーション1 (1).pdf">9班PoworPoint</a><br>
+<br>
+</body>
+</html>
