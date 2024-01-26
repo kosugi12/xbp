@@ -129,7 +129,7 @@
 <!--/#container-->
 
 <!--小さな端末用（900px以下端末）メニュー-->
-<nav id="menubar-s">
+<div id="menubar_hdr" class="close"></div>
 <ul>
 <li><a href="readme.html">ご購入前に</a></li>
 <li><a href="news.html">ニュース</a></li>
@@ -144,11 +144,6 @@
 <!--メニュー開閉ボタン-->
 <div id="menubar_hdr" class="close"></div>
 
-<!--メニューの開閉処理条件設定　900px以下-->
-<script>
-if (OCwindowWidth() <= 900) {
-	open_close("menubar_hdr", "menubar-s");
-}
 </script>
 
 </body>
